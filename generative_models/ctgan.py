@@ -3,7 +3,7 @@ from pandas import DataFrame
 from utils.logging import LOGGER
 
 from generative_models.generative_model import GenerativeModel
-from ctgan import CTGANSynthesizer
+from CTGAN.ctgan import CTGANSynthesizer
 
 
 class CTGAN(GenerativeModel):
