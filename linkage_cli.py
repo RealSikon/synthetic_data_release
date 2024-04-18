@@ -20,11 +20,7 @@ from feature_sets.bayes import CorrelationsFeatureSet
 
 from sanitisation_techniques.sanitiser import SanitiserNHS
 
-from generative_models.ctgan import CTGAN
-from generative_models.pate_gan import PATEGAN
-from generative_models.data_synthesiser import (IndependentHistogram,
-                                                BayesianNet,
-                                                PrivBayes)
+from generative_models.data_synthesiser import (BayesianNet, PrivBayes)
 
 from attack_models.mia_classifier import (MIAttackClassifierRandomForest,
                                           generate_mia_shadow_data,
@@ -95,21 +91,12 @@ def main():
     gmList = []
     if 'generativeModels' in runconfig.keys():
         for gm, paramsList in runconfig['generativeModels'].items():
-            if gm == 'IndependentHistogram':
-                for params in paramsList:
-                    gmList.append(IndependentHistogram(metadata, *params))
-            elif gm == 'BayesianNet':
+            if gm == 'BayesianNet':
                 for params in paramsList:
                     gmList.append(BayesianNet(metadata, *params))
             elif gm == 'PrivBayes':
                 for params in paramsList:
                     gmList.append(PrivBayes(metadata, *params))
-            elif gm == 'CTGAN':
-                for params in paramsList:
-                    gmList.append(CTGAN(metadata, *params))
-            elif gm == 'PATEGAN':
-                for params in paramsList:
-                    gmList.append(PATEGAN(metadata, *params))
             else:
                 raise ValueError(f'Unknown GM {gm}')
 
