@@ -8,12 +8,6 @@ filterwarnings('ignore')
 from os import path
 cwd = path.dirname(__file__)
 
-from attack_models.mia_classifier import (MIAttackClassifierLinearSVC,
-                                          MIAttackClassifierLogReg,
-                                          MIAttackClassifierRandomForest,
-                                          generate_mia_shadow_data,
-                                          generate_mia_anon_data)
-
 from generative_models.data_synthesiser import IndependentHistogram
 from sanitisation_techniques.sanitiser import SanitiserNHS
 from feature_sets.independent_histograms import HistogramFeatureSet

@@ -7,8 +7,6 @@ from itertools import combinations
 from utils.constants import *
 from utils.logging import LOGGER
 from feature_sets.feature_set import FeatureSet
-from feature_sets.independent_histograms import HistogramFeatureSet
-
 
 class CorrelationsFeatureSet(FeatureSet):
     def __init__(self, datatype, metadata, quids=None):

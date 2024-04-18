@@ -6,7 +6,6 @@ from pandas.api.types import is_numeric_dtype, CategoricalDtype
 
 from utils.logging import LOGGER
 from feature_sets.feature_set import FeatureSet
-from feature_sets.independent_histograms import HistogramFeatureSet
 from feature_sets.bayes import CorrelationsFeatureSet
 
 from warnings import filterwarnings

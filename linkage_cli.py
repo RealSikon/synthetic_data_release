@@ -14,11 +14,8 @@ from utils.utils import json_numpy_serialzer
 from utils.logging import LOGGER
 from utils.constants import *
 
-from feature_sets.independent_histograms import HistogramFeatureSet
 from feature_sets.model_agnostic import NaiveFeatureSet, EnsembleFeatureSet
 from feature_sets.bayes import CorrelationsFeatureSet
-
-from sanitisation_techniques.sanitiser import SanitiserNHS
 
 from generative_models.data_synthesiser import (BayesianNet, PrivBayes)
 
