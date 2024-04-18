@@ -33,9 +33,9 @@ def main():
     argparser = ArgumentParser()
     datasource = argparser.add_mutually_exclusive_group()
     datasource.add_argument('--s3name', '-S3', type=str, choices=['adult', 'census', 'credit', 'alarm', 'insurance'], help='Name of the dataset to run on')
-    datasource.add_argument('--datapath', '-D', type=str, help='Relative path to cwd of a local data file')
-    argparser.add_argument('--runconfig', '-RC', default='runconfig_mia.json', type=str, help='Path relative to cwd of runconfig file')
-    argparser.add_argument('--outdir', '-O', default='tests', type=str, help='Path relative to cwd for storing output files')
+    datasource.add_argument('--datapath', '-D', default='data\\texas', type=str, help='Relative path to cwd of a local data file')
+    argparser.add_argument('--runconfig', '-RC', default='tests\\linkage\\runconfig.json', type=str, help='Path relative to cwd of runconfig file')
+    argparser.add_argument('--outdir', '-O', default='tests\\linkage', type=str, help='Path relative to cwd for storing output files')
     args = argparser.parse_args()
 
     # Load runconfig
